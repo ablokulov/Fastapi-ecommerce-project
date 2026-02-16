@@ -14,16 +14,11 @@ DB_URL = URL.create(
     host       = config.DB_HOST
 )
 
-
 engine = create_engine(url=DB_URL)
-
-
 LocalSession = sessionmaker(bind=engine)
-
 
 class Base(DeclarativeBase):
     pass
-
 
 def initial_db():
     Base.metadata.create_all(engine)
